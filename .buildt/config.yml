@@ -1,0 +1,10 @@
+name: diagram-gpt
+id: a14f7463-3d4e-4b1b-9b97-8ab09f716323
+languages:
+  - TypeScript
+  - TSX
+extensions:
+  - .ts
+  - .cts
+  - .mts
+  - .tsx
