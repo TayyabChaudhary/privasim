@@ -107,15 +107,15 @@ export default function Home() {
     paddingLeft: 0,
   }}
 >
-<main className="container flex-1 flex flex-wrap" style={{ width: '70%' }}>
-  <div className="w-full md:w-9/12 mx-auto p-2 flex flex-col" style={{ width: "90%", maxHeight: "800px", paddingRight: "200px" }}>
-    <div className="flex-1 flex justify-center relative mr-5 mb-1" style={{ height: "100%", overflowY: "auto", width: "100%", border: "10px solid var(--border-color) !important", borderRadius: "10px !important" }}>
+<main className="container flex flex-wrap flex-1" style={{ width: '70%' }}>
+  <div className="flex flex-col w-full p-2 mx-auto md:w-9/12" style={{ width: "90%", maxHeight: "800px", paddingRight: "200px" }}>
+    <div className="relative flex justify-center flex-1 mb-1 mr-5" style={{ height: "100%", overflowY: "auto", width: "100%", border: "10px solid var(--border-color) !important", borderRadius: "10px !important" }}>
         <Mermaid chart={outputCode} />
     </div>
   </div>
 
-  <div className="flex flex-col justify-end w-full md:w-3/12 flex-row-reverse" style={{ width: '20%', position: 'fixed', top: '100px', right: '10px' }}>
-    <div style={{ height: 'calc(100vh - 250px)', border: `1px solid var(--border-color)`, borderRadius: borderRadius, marginBottom: '10px', '--border-color': borderColor, boxShadow: '0px 0px 5px rgba(0, 0, 0, 0.2)' }} className="flex-10">
+  <div className="flex flex-row-reverse justify-end w-full md:w-3/12" style={{ width: '20%', position: 'fixed', top: '100px', right: '10px' }}>
+    <div style={{ height: 'calc(100vh - 250px)', border: '1px solid var(--border-color)', borderRadius: borderRadius, marginBottom: '10px', boxShadow: '0px 0px 5px rgba(0, 0, 0, 0.2)' }} className="flex-10">
       <CodeBlock code={draftOutputCode} />
       {messages.map((message, index) => (
         <ChatMessage key={index} message={message.content} />

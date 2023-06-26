@@ -85,7 +85,7 @@ export function Mermaid({ chart }: MermaidProps) {
       mermaid.mermaidAPI.initialize({
         startOnLoad: false,
         securityLevel: "loose",
-        theme: customTheme,
+        theme: theme,
         logLevel: 5,
       });
       await mermaid.run();
@@ -118,10 +118,10 @@ export function Mermaid({ chart }: MermaidProps) {
 
   return (
     <div className="w-full">
-      <div className="absolute right-0 px-4 py-2 text-xs font-sans flex items-center justify-center">
+      <div className="absolute right-0 flex items-center justify-center px-4 py-2 font-sans text-xs">
         <Select value={theme} onValueChange={handleThemeChange}>
           <SelectTrigger className="w-[180px] mr-2 h-8">
-            <Palette className="h-4 w-4" />
+            <Palette className="w-4 h-4" />
             <SelectValue id="model" placeholder="Select theme" />
           </SelectTrigger>
           <SelectContent>
@@ -134,12 +134,12 @@ export function Mermaid({ chart }: MermaidProps) {
             })}
           </SelectContent>
         </Select>
-        <button className="flex ml-auto gap-2" onClick={handleCopyClick}>
-          <Copy className="mr-2 h-4 w-4" />
+        <button className="flex gap-2 ml-auto" onClick={handleCopyClick}>
+          <Copy className="w-4 h-4 mr-2" />
           {label}
         </button>
       </div>
-      <div ref={ref} className="mermaid flex items-center justify-center mt-12">
+      <div ref={ref} className="flex items-center justify-center mt-12 mermaid">
         {chart}
       </div>
     </div>
